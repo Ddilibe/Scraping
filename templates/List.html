@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+{% block static %}
+	<link rel="stylesheet" href="{% static 'css/list.css' %}">
+{% endblock static %}
+
+{% block content %}
+
+<h1 class="heading"> Trending News Topics</h1>
+{% for kids in object_list %}
+
+<div class="all_the_objects">
+	<div class="object_image">
+		<img src="{{kids.image_url}}" class="image_start">
+	</div>
+	<div class="object">
+		<div class="object_name">
+			<a href="{% url 'detail' kids.pk %}">{{ kids.title }}</a>
+		</div>
+		<div class="objects_name_description">
+			{{ kids.body|truncatewords:20 }}
+		</div>
+	</div>
+</div>
+{% endfor %}
+
+
+{% endblock content %}

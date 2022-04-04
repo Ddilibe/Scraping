@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+
+	<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+	<link rel="stylesheet" href="{% static 'css/shoe.css' %}">
+	{% block static %}
+	<link rel="stylesheet"href="{% static 'css/shoe.css'%}">
+	{% endblock static %}
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>        
+	<title>Shoe Website</title>
+	</head>
+
+	<body>
+		<header>
+			<div class="navigation">
+				<a href="{% url 'list' %}" class="logo">Dilibe News Network</a>				
+			</div>
+		</header>
+			<div class="wrappper">
+				 <div class="menu">
+					 <a class="active" href="#">About</a>
+					 <a href="#">Articles</a>
+					 <a href="#">Visits</a>
+					 <a href="#">Contact</a>
+				 </div>
+			</div>
+		{% block content %}
+		
+		{% endblock content %}
+		<footer class="footer_class">
+			<div class="footer_name"> Dilibe News Network</div>
+			<div class="other_sections">
+				<div class="About">
+					<a class="main">About</a>
+					<a class="sub">History</a>
+					<a class="sub">Foundation</a>
+					<a class="sub">Future Plans</a>
+				</div>
+				<div class="About">
+					<a class="main">Articles</a>
+					<a class="sub">News</a>
+					<a class="sub">Book Reviews</a>
+					<a class="sub">Press</a>
+					<a class="sub">Interviews</a>
+				</div>
+				<div class="About">
+					<a class="main">Visit</a>
+					<a class="sub">Location</a>
+					<a class="sub">Opening Times</a>
+					<a class="sub">Tickets</a>
+				</div>
+				<div class="About">
+					<a class="main">Shop</a>
+					<a class="sub">Gifts</a>
+					<a class="sub">Books</a>
+				</div>
+				<div class="About">
+					<a class="main">Contact</a>
+				</div>
+			</div>
+		</footer>
+	
+	</body>
+	<style >
+		.footer_class {
+			display: flex;
+			justify-content: space-evenly;
+			flex-wrap: wrap;
+			width:100%;
+			background-color: #ffffcf;
+		}
+		.footer_name {
+			margin-top: 2%;
+			font-weight: 600;
+			font-size: 50px;
+		}
+		.other_sections{
+			display: flex;
+			justify-content: space-between;
+			width:100%;
+		}
+		.About{
+			margin: auto;
+			display: flex;
+			 flex-direction: column;
+			 justify-content: center;
+			 padding:5%;
+		}
+		.navigation {
+			height: 50px;
+			width: 100%;
+		}
+		.logo{
+			display:flex;
+			justify-content: center;
+			font-weight: bolder;
+			font-size: 30px;
+		}
+		.menu {
+			display: flex;
+			justify-content: space-evenly;
+			box-shadow: 0 20px 20px rgb(0 0 0 / 20%);
+			background-color: #dddddd;
+		}
+		a {
+			text-decoration: none;
+			color: Green;
+		}
+		.main {
+			text-transform: uppercase;
+			font-size: 16px;
+			margin: 10%;
+			color: black;
+			font-weight: bold;
+		}
+		.sub{
+			color: blue;
+		}
+	</style>
+	
+	{% block inline-style %}
+	
+	{% endblock inline-style%}
+
+</html>
